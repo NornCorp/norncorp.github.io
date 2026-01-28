@@ -166,7 +166,7 @@ export default function Header() {
             </PopoverPanel>
           </Popover>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6 lg:items-center">
           <a href="#" className="text-sm/6 font-semibold text-white hover:text-norn-green">
             Log in
           </a>
