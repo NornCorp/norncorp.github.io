@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.tsx';
+import Hero from '../components/Hero.tsx';
+import LogoCloud from '../components/LogoCloud.astro';
+import Features from '../components/Features.tsx';
+import BentoGrid from '../components/BentoGrid.tsx';
+import Stats from '../components/Stats.tsx';
+import CTA from '../components/CTA.tsx';
+import Footer from '../components/Footer.tsx';
+---
+
+<Layout>
+    <!-- ============================================
+         SECTION: Header
+         Component: src/components/Header.tsx
+         ============================================ -->
+    <Header client:load />
+
+    <!-- ============================================
+         SECTION: Hero
+         Component: src/components/Hero.tsx
+         ============================================ -->
+    <Hero />
+
+    <!-- ============================================
+         SECTION: Logo Cloud
+         Component: src/components/LogoCloud.astro
+         ============================================ -->
+    <LogoCloud />
+
+    <!-- ============================================
+         SECTION: Features
+         Component: src/components/Features.tsx
+         ============================================ -->
+    <Features />
+
+    <!-- ============================================
+         SECTION: Bento Grid
+         Component: src/components/BentoGrid.tsx
+         ============================================ -->
+    <BentoGrid />
+
+    <!-- ============================================
+         SECTION: Stats
+         Component: src/components/Stats.tsx
+         ============================================ -->
+    <Stats />
+
+    <!-- ============================================
+         SECTION: CTA
+         Component: src/components/CTA.tsx
+         ============================================ -->
+    <CTA />
+
+    <!-- ============================================
+         SECTION: Footer
+         Component: src/components/Footer.tsx
+         ============================================ -->
+    <Footer />
+</Layout>

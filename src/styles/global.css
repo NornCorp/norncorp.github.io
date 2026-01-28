@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+    --color-norn-dark: #081C15;
+    --color-norn-darker: #0D1F17;
+    --color-norn-green: #38BA73;
+    --color-norn-green-light: #4ADE80;
+    --color-norn-muted: #6B8F7A;
+}
