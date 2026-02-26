@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  category: string;
+  slug: string;
+}
+
+const { title, description, pubDate, author, category, slug } = Astro.props;
+---
+
+<article class="relative">
+  <div class="absolute inset-0 rounded-2xl bg-norn-darker" />
+  <div class="relative p-6">
+    <div class="flex items-center gap-x-4 text-xs">
+      <time datetime={pubDate.toISOString()} class="text-gray-500">
+        {pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+      <span class="rounded-full bg-norn-green/10 px-3 py-1.5 font-medium text-norn-green">
+        {category}
+      </span>
+    </div>
+    <div class="mt-4">
+      <h3 class="text-lg font-semibold text-white">
+        <a href={`/resources/blog/${slug}`}>
+          <span class="absolute inset-0"></span>
+          {title}
+        </a>
+      </h3>
+      <p class="mt-2 text-sm text-gray-400 line-clamp-3">{description}</p>
+    </div>
+    <div class="mt-4 flex items-center gap-x-4">
+      <div class="text-sm text-gray-400">
+        <p class="font-semibold text-white">{author}</p>
+      </div>
+    </div>
+  </div>
+  <div class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10" />
+</article>

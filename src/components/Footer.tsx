@@ -1,22 +1,18 @@
 const navigation = {
   products: [
-    { name: 'Mimir', href: '#' },
-    { name: 'Yggdrasil', href: '#' },
-    { name: 'Kubernetes Integration', href: '#' },
-    { name: 'CI/CD Plugins', href: '#' },
-    { name: 'Enterprise', href: '#' },
+    { name: 'Mimir', href: '/products/mimir' },
+    { name: 'Yggdrasil', href: '/products/yggdrasil' },
   ],
   resources: [
-    { name: 'Documentation', href: '#' },
-    { name: 'API Reference', href: '#' },
-    { name: 'Tutorials', href: '#' },
-    { name: 'Community', href: '#' },
+    { name: 'Documentation', href: '/resources/documentation' },
+    { name: 'Tutorials', href: '/resources/tutorials' },
+    { name: 'Guides', href: '/resources/guides' },
+    { name: 'Blog', href: '/resources/blog' },
   ],
   company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
+    { name: 'About', href: '/company/about' },
     { name: 'Careers', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Contact', href: '/company/contact' },
   ],
   legal: [
     { name: 'Terms of Service', href: '#' },

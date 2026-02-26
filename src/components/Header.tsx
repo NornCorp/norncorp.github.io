@@ -16,7 +16,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PlayCircleIcon, DocumentTextIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 // Custom icons for products
 const KeyIcon = () => (
@@ -36,29 +36,32 @@ const products = [
   { name: 'Yggdrasil', description: 'Identity-aware access gateway', href: '/products/yggdrasil', icon: TreeIcon },
 ]
 
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Documentation', href: '/docs', icon: DocumentTextIcon },
-]
 
 const resources = [
-  { name: 'Documentation', href: '/docs' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Training', href: '/training' },
-  { name: 'Community', href: '/community' },
+  { name: 'Documentation', href: '/resources/documentation' },
+  { name: 'Tutorials', href: '/resources/tutorials' },
+  { name: 'Guides', href: '/resources/guides' },
+  { name: 'Blog', href: '/resources/blog' },
 ]
 
 const company = [
-  { name: 'About', href: '/about' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'About', href: '/company/about' },
+  { name: 'Careers', href: '/company/careers' },
+  { name: 'Contact', href: '/company/contact' },
+]
+
+const solutions = [
+  { name: 'Financial Services', href: '/solutions/financial-services' },
+  { name: 'Healthcare', href: '/solutions/healthcare' },
+  { name: 'Manufacturing', href: '/solutions/manufacturing' },
+  { name: 'Technology', href: '/solutions/technology' },
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-norn-darker">
+    <header className="relative z-50 bg-norn-darker">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5 flex items-center gap-x-3">
@@ -107,18 +110,6 @@ export default function Header() {
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-2 divide-x divide-white/10 bg-white/5">
-                {callsToAction.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-white hover:bg-white/5"
-                  >
-                    <item.icon aria-hidden="true" className="size-5 flex-none text-gray-400" />
-                    {item.name}
-                  </a>
-                ))}
-              </div>
             </PopoverPanel>
           </Popover>
 
@@ -133,6 +124,28 @@ export default function Header() {
               className="absolute left-1/2 z-10 mt-3 w-48 -translate-x-1/2 rounded-xl bg-norn-darker p-2 shadow-lg ring-1 ring-white/10 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
             >
               {resources.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block rounded-lg px-3 py-2 text-sm/6 font-semibold text-white hover:bg-white/5"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </PopoverPanel>
+          </Popover>
+
+          <Popover className="relative">
+            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white outline-none hover:text-norn-green">
+              Solutions
+              <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-400" />
+            </PopoverButton>
+
+            <PopoverPanel
+              transition
+              className="absolute left-1/2 z-10 mt-3 w-56 -translate-x-1/2 rounded-xl bg-norn-darker p-2 shadow-lg ring-1 ring-white/10 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+            >
+              {solutions.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -167,10 +180,10 @@ export default function Header() {
           </Popover>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6 lg:items-center">
-          <a href="#" className="text-sm/6 font-semibold text-white hover:text-norn-green">
+          <a href="/login" className="text-sm/6 font-semibold text-white hover:text-norn-green">
             Log in
           </a>
-          <a href="#" className="rounded-md bg-norn-green px-3.5 py-2 text-sm font-semibold text-norn-dark hover:bg-norn-green-light">
+          <a href="/get-started" className="rounded-md bg-norn-green px-3.5 py-2 text-sm font-semibold text-norn-dark hover:bg-norn-green-light">
             Get Started
           </a>
         </div>
@@ -236,6 +249,25 @@ export default function Header() {
 
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-white hover:bg-white/5">
+                    Solutions
+                    <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
+                  </DisclosureButton>
+                  <DisclosurePanel className="mt-2 space-y-2">
+                    {solutions.map((item) => (
+                      <DisclosureButton
+                        key={item.name}
+                        as="a"
+                        href={item.href}
+                        className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-white hover:bg-white/5"
+                      >
+                        {item.name}
+                      </DisclosureButton>
+                    ))}
+                  </DisclosurePanel>
+                </Disclosure>
+
+                <Disclosure as="div" className="-mx-3">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-white hover:bg-white/5">
                     Company
                     <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
                   </DisclosureButton>
@@ -255,13 +287,13 @@ export default function Header() {
               </div>
               <div className="py-6 space-y-2">
                 <a
-                  href="#"
+                  href="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5"
                 >
                   Log in
                 </a>
                 <a
-                  href="#"
+                  href="/get-started"
                   className="-mx-3 block rounded-lg bg-norn-green px-3 py-2.5 text-base/7 font-semibold text-norn-dark hover:bg-norn-green-light"
                 >
                   Get Started

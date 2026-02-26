@@ -1,0 +1,289 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.tsx';
+import Footer from '../../components/Footer.tsx';
+---
+
+<Layout title="Contact Us - NornCorp" description="Get in touch with our team to learn how NornCorp can secure your enterprise infrastructure.">
+    <Header client:load />
+
+    <!-- Contact Form Section -->
+    <div class="bg-norn-dark">
+        <div class="relative isolate overflow-hidden bg-gradient-to-b from-norn-green/5 py-24 sm:py-32">
+            <div
+                aria-hidden="true"
+                class="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-norn-darker shadow-xl ring-1 shadow-norn-green/10 ring-white/5 md:-mr-20 lg:-mr-36"
+            />
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-none lg:grid lg:grid-cols-3 lg:gap-x-16">
+                <!-- Left: Header -->
+                <div>
+                    <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
+                        Contact sales
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-400">
+                        Ready to secure your infrastructure? Our team will help you get started with NornCorp's enterprise security solutions.
+                    </p>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="lg:col-span-2">
+                    <div class="rounded-2xl bg-norn-darker/50 p-8 ring-1 ring-white/10 backdrop-blur-sm sm:p-10">
+                        <form action="#" method="POST">
+                            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                        <div>
+                            <label for="first-name" class="block text-sm/6 font-semibold text-white">
+                                First name
+                            </label>
+                            <div class="mt-2.5">
+                                <input
+                                    id="first-name"
+                                    name="first-name"
+                                    type="text"
+                                    autocomplete="given-name"
+                                    class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-norn-green"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm/6 font-semibold text-white">
+                                Last name
+                            </label>
+                            <div class="mt-2.5">
+                                <input
+                                    id="last-name"
+                                    name="last-name"
+                                    type="text"
+                                    autocomplete="family-name"
+                                    class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-norn-green"
+                                />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="company" class="block text-sm/6 font-semibold text-white">
+                                Company
+                            </label>
+                            <div class="mt-2.5">
+                                <input
+                                    id="company"
+                                    name="company"
+                                    type="text"
+                                    autocomplete="organization"
+                                    class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-norn-green"
+                                />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="email" class="block text-sm/6 font-semibold text-white">
+                                Email
+                            </label>
+                            <div class="mt-2.5">
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    autocomplete="email"
+                                    class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-norn-green"
+                                />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="phone-number" class="block text-sm/6 font-semibold text-white">
+                                Phone number
+                            </label>
+                            <div class="mt-2.5">
+                                <input
+                                    id="phone-number"
+                                    name="phone-number"
+                                    type="tel"
+                                    autocomplete="tel"
+                                    placeholder="+1 (555) 000-0000"
+                                    class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-norn-green"
+                                />
+                            </div>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="message" class="block text-sm/6 font-semibold text-white">
+                                Message
+                            </label>
+                            <div class="mt-2.5">
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="4"
+                                    class="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-norn-green"
+                                ></textarea>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-4 sm:col-span-2">
+                            <div class="flex h-6 items-center">
+                                <input
+                                    id="agree-to-policies"
+                                    name="agree-to-policies"
+                                    type="checkbox"
+                                    class="size-4 rounded border-white/10 bg-white/5 text-norn-green focus:ring-norn-green focus:ring-offset-norn-dark"
+                                />
+                            </div>
+                            <label for="agree-to-policies" class="text-sm/6 text-gray-400">
+                                By selecting this, you agree to our{' '}
+                                <a href="#" class="font-semibold whitespace-nowrap text-norn-green hover:text-norn-green-light">
+                                    privacy policy
+                                </a>.
+                            </label>
+                        </div>
+                    </div>
+                            <div class="mt-10">
+                                <button
+                                    type="submit"
+                                    class="block w-full rounded-md bg-norn-green px-3.5 py-2.5 text-center text-sm font-semibold text-norn-dark shadow-xs hover:bg-norn-green-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-norn-green"
+                                >
+                                    Let's talk
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-norn-darker sm:h-32"></div>
+        </div>
+    </div>
+
+    <!-- Contact Info Section -->
+    <div class="bg-norn-darker py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-none divide-y divide-white/10">
+                <!-- Get in touch -->
+                <div class="grid grid-cols-1 gap-10 py-16 lg:grid-cols-3">
+                    <div>
+                        <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white">
+                            Get in touch
+                        </h2>
+                        <p class="mt-4 text-base/7 text-gray-400">
+                            Our team is here to help with your security needs.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
+                        <div class="rounded-2xl bg-norn-dark/50 p-10 ring-1 ring-white/10">
+                            <h3 class="text-base/7 font-semibold text-white">Enterprise Sales</h3>
+                            <dl class="mt-3 space-y-1 text-sm/6 text-gray-400">
+                                <div>
+                                    <dt class="sr-only">Email</dt>
+                                    <dd>
+                                        <a
+                                            href="mailto:sales@norncorp.com"
+                                            class="font-semibold text-norn-green hover:text-norn-green-light"
+                                        >
+                                            sales@norncorp.com
+                                        </a>
+                                    </dd>
+                                </div>
+                                <div class="mt-1">
+                                    <dt class="sr-only">Phone number</dt>
+                                    <dd>+1 (555) 905-2345</dd>
+                                </div>
+                            </dl>
+                        </div>
+                        <div class="rounded-2xl bg-norn-dark/50 p-10 ring-1 ring-white/10">
+                            <h3 class="text-base/7 font-semibold text-white">Technical Support</h3>
+                            <dl class="mt-3 space-y-1 text-sm/6 text-gray-400">
+                                <div>
+                                    <dt class="sr-only">Email</dt>
+                                    <dd>
+                                        <a href="mailto:support@norncorp.com" class="font-semibold text-norn-green hover:text-norn-green-light">
+                                            support@norncorp.com
+                                        </a>
+                                    </dd>
+                                </div>
+                                <div class="mt-1">
+                                    <dt class="sr-only">Phone number</dt>
+                                    <dd>+1 (555) 905-3456</dd>
+                                </div>
+                            </dl>
+                        </div>
+                        <div class="rounded-2xl bg-norn-dark/50 p-10 ring-1 ring-white/10">
+                            <h3 class="text-base/7 font-semibold text-white">Join our team</h3>
+                            <dl class="mt-3 space-y-1 text-sm/6 text-gray-400">
+                                <div>
+                                    <dt class="sr-only">Email</dt>
+                                    <dd>
+                                        <a
+                                            href="mailto:careers@norncorp.com"
+                                            class="font-semibold text-norn-green hover:text-norn-green-light"
+                                        >
+                                            careers@norncorp.com
+                                        </a>
+                                    </dd>
+                                </div>
+                                <div class="mt-1">
+                                    <dt class="sr-only">Phone number</dt>
+                                    <dd>+1 (555) 905-4567</dd>
+                                </div>
+                            </dl>
+                        </div>
+                        <div class="rounded-2xl bg-norn-dark/50 p-10 ring-1 ring-white/10">
+                            <h3 class="text-base/7 font-semibold text-white">General Inquiries</h3>
+                            <dl class="mt-3 space-y-1 text-sm/6 text-gray-400">
+                                <div>
+                                    <dt class="sr-only">Email</dt>
+                                    <dd>
+                                        <a href="mailto:hello@norncorp.com" class="font-semibold text-norn-green hover:text-norn-green-light">
+                                            hello@norncorp.com
+                                        </a>
+                                    </dd>
+                                </div>
+                                <div class="mt-1">
+                                    <dt class="sr-only">Phone number</dt>
+                                    <dd>+1 (555) 905-5678</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Locations -->
+                <div class="grid grid-cols-1 gap-10 py-16 lg:grid-cols-3">
+                    <div>
+                        <h2 class="text-4xl font-semibold tracking-tight text-pretty text-white">
+                            Locations
+                        </h2>
+                        <p class="mt-4 text-base/7 text-gray-400">
+                            Find us in major cities around the world.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
+                        <div class="rounded-2xl bg-norn-dark/50 p-10 ring-1 ring-white/10">
+                            <h3 class="text-base/7 font-semibold text-white">San Francisco</h3>
+                            <address class="mt-3 space-y-1 text-sm/6 text-gray-400 not-italic">
+                                <p>100 Market Street</p>
+                                <p>San Francisco, CA 94105</p>
+                            </address>
+                        </div>
+                        <div class="rounded-2xl bg-norn-dark/50 p-10 ring-1 ring-white/10">
+                            <h3 class="text-base/7 font-semibold text-white">New York</h3>
+                            <address class="mt-3 space-y-1 text-sm/6 text-gray-400 not-italic">
+                                <p>886 Walter Street</p>
+                                <p>New York, NY 12345</p>
+                            </address>
+                        </div>
+                        <div class="rounded-2xl bg-norn-dark/50 p-10 ring-1 ring-white/10">
+                            <h3 class="text-base/7 font-semibold text-white">Toronto</h3>
+                            <address class="mt-3 space-y-1 text-sm/6 text-gray-400 not-italic">
+                                <p>7363 Cynthia Pass</p>
+                                <p>Toronto, ON N3Y 4H8</p>
+                            </address>
+                        </div>
+                        <div class="rounded-2xl bg-norn-dark/50 p-10 ring-1 ring-white/10">
+                            <h3 class="text-base/7 font-semibold text-white">London</h3>
+                            <address class="mt-3 space-y-1 text-sm/6 text-gray-400 not-italic">
+                                <p>45 King William Street</p>
+                                <p>London, EC4R 9AN</p>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <Footer />
+</Layout>
