@@ -38,23 +38,14 @@ const products = [
 
 
 const resources = [
-  { name: 'Documentation', href: '/resources/documentation' },
-  { name: 'Tutorials', href: '/resources/tutorials' },
-  { name: 'Guides', href: '/resources/guides' },
+  { name: 'Documentation', href: '/resources/docs' },
   { name: 'Blog', href: '/resources/blog' },
 ]
 
 const company = [
   { name: 'About', href: '/company/about' },
-  { name: 'Careers', href: '/company/careers' },
+  { name: 'Careers', href: '#' },
   { name: 'Contact', href: '/company/contact' },
-]
-
-const solutions = [
-  { name: 'Financial Services', href: '/solutions/financial-services' },
-  { name: 'Healthcare', href: '/solutions/healthcare' },
-  { name: 'Manufacturing', href: '/solutions/manufacturing' },
-  { name: 'Technology', href: '/solutions/technology' },
 ]
 
 export default function Header() {
@@ -137,28 +128,6 @@ export default function Header() {
 
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white outline-none hover:text-norn-green">
-              Solutions
-              <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-400" />
-            </PopoverButton>
-
-            <PopoverPanel
-              transition
-              className="absolute left-1/2 z-10 mt-3 w-56 -translate-x-1/2 rounded-xl bg-norn-darker p-2 shadow-lg ring-1 ring-white/10 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
-            >
-              {solutions.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block rounded-lg px-3 py-2 text-sm/6 font-semibold text-white hover:bg-white/5"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </PopoverPanel>
-          </Popover>
-
-          <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white outline-none hover:text-norn-green">
               Company
               <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-400" />
             </PopoverButton>
@@ -183,7 +152,7 @@ export default function Header() {
           <a href="/login" className="text-sm/6 font-semibold text-white hover:text-norn-green">
             Log in
           </a>
-          <a href="/get-started" className="rounded-md bg-norn-green px-3.5 py-2 text-sm font-semibold text-norn-dark hover:bg-norn-green-light">
+          <a href="/resources/docs" className="rounded-md bg-norn-green px-3.5 py-2 text-sm font-semibold text-norn-dark hover:bg-norn-green-light">
             Get Started
           </a>
         </div>
@@ -249,25 +218,6 @@ export default function Header() {
 
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-white hover:bg-white/5">
-                    Solutions
-                    <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
-                  </DisclosureButton>
-                  <DisclosurePanel className="mt-2 space-y-2">
-                    {solutions.map((item) => (
-                      <DisclosureButton
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-white hover:bg-white/5"
-                      >
-                        {item.name}
-                      </DisclosureButton>
-                    ))}
-                  </DisclosurePanel>
-                </Disclosure>
-
-                <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-white hover:bg-white/5">
                     Company
                     <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
                   </DisclosureButton>
@@ -293,7 +243,7 @@ export default function Header() {
                   Log in
                 </a>
                 <a
-                  href="/get-started"
+                  href="/resources/docs"
                   className="-mx-3 block rounded-lg bg-norn-green px-3 py-2.5 text-base/7 font-semibold text-norn-dark hover:bg-norn-green-light"
                 >
                   Get Started

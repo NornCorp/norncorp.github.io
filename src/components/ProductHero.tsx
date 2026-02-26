@@ -26,7 +26,7 @@ export default function ProductHero({ title, description, screenshot }: ProductH
                 >
                   Get started
                 </a>
-                <a href="/resources/documentation" className="text-sm/6 font-semibold text-white hover:text-norn-green">
+                <a href="/resources/docs" className="text-sm/6 font-semibold text-white hover:text-norn-green">
                   Learn more <span aria-hidden="true">→</span>
                 </a>
               </div>

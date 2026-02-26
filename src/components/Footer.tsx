@@ -4,9 +4,7 @@ const navigation = {
     { name: 'Yggdrasil', href: '/products/yggdrasil' },
   ],
   resources: [
-    { name: 'Documentation', href: '/resources/documentation' },
-    { name: 'Tutorials', href: '/resources/tutorials' },
-    { name: 'Guides', href: '/resources/guides' },
+    { name: 'Documentation', href: '/resources/docs' },
     { name: 'Blog', href: '/resources/blog' },
   ],
   company: [
