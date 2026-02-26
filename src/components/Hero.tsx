@@ -9,7 +9,7 @@ export default function Hero() {
             <div className="mx-auto max-w-2xl">
               <div className="max-w-lg">
                 <div>
-                  <a href="#" className="inline-flex space-x-6">
+                  <a href="/resources/blog/announcing-yggdrasil-v2" className="inline-flex space-x-6">
                     <span className="rounded-full bg-norn-green/10 px-3 py-1 text-sm/6 font-semibold text-norn-green ring-1 ring-norn-green/25 ring-inset">
                       What's new
                     </span>
@@ -28,12 +28,12 @@ export default function Hero() {
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <a
-                    href="#"
+                    href="/resources/docs"
                     className="rounded-md bg-norn-green px-3.5 py-2.5 text-sm font-semibold text-norn-dark shadow-xs hover:bg-norn-green-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-norn-green"
                   >
                     Get Started
                   </a>
-                  <a href="#" className="text-sm/6 font-semibold text-white hover:text-norn-green">
+                  <a href="/resources/docs" className="text-sm/6 font-semibold text-white hover:text-norn-green">
                     View Documentation <span aria-hidden="true">→</span>
                   </a>
                 </div>
