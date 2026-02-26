@@ -151,7 +151,7 @@ export default function Header() {
           <a href="/login" className="text-sm/6 font-semibold text-white hover:text-norn-green">
             Log in
           </a>
-          <a href="/resources/docs" className="rounded-md bg-norn-green px-3.5 py-2 text-sm font-semibold text-norn-dark hover:bg-norn-green-light">
+          <a href="/resources/docs#getting-started" className="rounded-md bg-norn-green px-3.5 py-2 text-sm font-semibold text-norn-dark hover:bg-norn-green-light">
             Get Started
           </a>
         </div>
@@ -242,7 +242,7 @@ export default function Header() {
                   Log in
                 </a>
                 <a
-                  href="/resources/docs"
+                  href="/resources/docs#getting-started"
                   className="-mx-3 block rounded-lg bg-norn-green px-3 py-2.5 text-base/7 font-semibold text-norn-dark hover:bg-norn-green-light"
                 >
                   Get Started

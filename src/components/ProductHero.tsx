@@ -4,9 +4,10 @@ interface ProductHeroProps {
   title: string
   description: string
   screenshot: string
+  docsHref?: string
 }
 
-export default function ProductHero({ title, description, screenshot }: ProductHeroProps) {
+export default function ProductHero({ title, description, screenshot, docsHref = '/resources/docs' }: ProductHeroProps) {
   return (
     <div className="bg-norn-darker">
       <div className="relative isolate overflow-hidden pt-14">
@@ -21,12 +22,12 @@ export default function ProductHero({ title, description, screenshot }: ProductH
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
-                  href="#"
+                  href={docsHref}
                   className="rounded-md bg-norn-green px-3.5 py-2.5 text-sm font-semibold text-norn-dark shadow-xs hover:bg-norn-green-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-norn-green"
                 >
                   Get started
                 </a>
-                <a href="/resources/docs" className="text-sm/6 font-semibold text-white hover:text-norn-green">
+                <a href={docsHref} className="text-sm/6 font-semibold text-white hover:text-norn-green">
                   Learn more <span aria-hidden="true">→</span>
                 </a>
               </div>

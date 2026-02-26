@@ -1,0 +1,117 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.tsx';
+import Footer from '../../../components/Footer.tsx';
+
+const sections = [
+    {
+        id: 'getting-started',
+        badge: 'Getting Started',
+        title: 'Get up and running',
+        bg: 'bg-norn-dark',
+        links: [
+            { name: 'Getting Started with Mimir', description: 'Set up your first secrets engine and start managing credentials.', href: '#' },
+            { name: 'Getting Started with Yggdrasil', description: 'Configure access policies and connect your identity provider.', href: '#' },
+            { name: 'Installation', description: 'Install the CLI and configure your environment.', href: '#' },
+        ],
+    },
+    {
+        id: 'mimir',
+        badge: 'Mimir',
+        title: 'Secrets management & encryption',
+        bg: 'bg-norn-darker',
+        links: [
+            { name: 'Secrets Engine', description: 'Store, access, and rotate secrets with fine-grained access controls.', href: '#' },
+            { name: 'Dynamic Secrets', description: 'Generate short-lived credentials on demand for databases and cloud providers.', href: '#' },
+            { name: 'Encryption as a Service', description: 'Encrypt and decrypt data without managing encryption keys directly.', href: '#' },
+            { name: 'CLI Reference', description: 'Complete reference for the Mimir command-line interface.', href: '#' },
+            { name: 'API Reference', description: 'REST and gRPC endpoints for secrets, encryption, and credential management.', href: '#' },
+        ],
+    },
+    {
+        id: 'yggdrasil',
+        badge: 'Yggdrasil',
+        title: 'Access control & identity',
+        bg: 'bg-norn-dark',
+        links: [
+            { name: 'Access Policies', description: 'Define and enforce least-privilege access policies across your infrastructure.', href: '#' },
+            { name: 'SSO & Identity Providers', description: 'Integrate with SAML, OIDC, and enterprise identity providers.', href: '#' },
+            { name: 'Session Recording', description: 'Record and replay privileged sessions for compliance and forensics.', href: '#' },
+            { name: 'Audit Logging', description: 'Comprehensive audit trail of every access request and policy decision.', href: '#' },
+            { name: 'CLI Reference', description: 'Complete reference for the Yggdrasil command-line interface.', href: '#' },
+            { name: 'API Reference', description: 'REST and gRPC endpoints for policies, sessions, and audit logs.', href: '#' },
+        ],
+    },
+    {
+        id: 'sdks',
+        badge: 'SDKs & Libraries',
+        title: 'Official client libraries',
+        bg: 'bg-norn-darker',
+        links: [
+            { name: 'Go SDK', description: 'Idiomatic Go client for Mimir and Yggdrasil.', href: '#' },
+            { name: 'Python SDK', description: 'Python client with async support and type hints.', href: '#' },
+            { name: 'Node.js SDK', description: 'TypeScript-first client for Node.js applications.', href: '#' },
+            { name: 'Java SDK', description: 'Java client for Spring Boot and enterprise applications.', href: '#' },
+        ],
+    },
+    {
+        id: 'integrations',
+        badge: 'Integrations',
+        title: 'Connect to your stack',
+        bg: 'bg-norn-dark',
+        links: [
+            { name: 'Kubernetes', description: 'Inject secrets into pods and enforce access policies with the Mimir operator.', href: '#' },
+            { name: 'Terraform', description: 'Provision Mimir secrets engines and Yggdrasil policies as code.', href: '#' },
+            { name: 'CI/CD Pipelines', description: 'Deliver secrets to GitHub Actions, GitLab CI, and Jenkins pipelines.', href: '#' },
+            { name: 'Docker', description: 'Manage container secrets without baking credentials into images.', href: '#' },
+            { name: 'SIEM & Logging', description: 'Forward Yggdrasil audit logs to Splunk, Datadog, and Elastic.', href: '#' },
+            { name: 'Identity Providers', description: 'Connect Yggdrasil to Okta, Azure AD, and other SAML/OIDC providers.', href: '#' },
+        ],
+    },
+];
+---
+
+<Layout title="Documentation - NornCorp" description="Guides, references, and tutorials for NornCorp's security platform.">
+    <Header client:load />
+
+    <main class="isolate">
+        <!-- Hero -->
+        <div class="bg-norn-darker py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                        Documentation
+                    </h1>
+                    <p class="mt-4 text-lg text-gray-400">
+                        Everything you need to secure your infrastructure with NornCorp.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Doc sections -->
+        {sections.map((section) => (
+            <div id={section.id} class={`${section.bg} py-24`}>
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <p class="text-base/7 font-semibold text-norn-green">{section.badge}</p>
+                    <h2 class="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                        {section.title}
+                    </h2>
+                    <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        {section.links.map((link) => (
+                            <a
+                                href={link.href}
+                                class="rounded-2xl bg-norn-dark/50 p-8 ring-1 ring-white/10 transition hover:ring-norn-green/25"
+                            >
+                                <h3 class="text-lg font-semibold text-white">{link.name}</h3>
+                                <p class="mt-2 text-sm text-gray-400">{link.description}</p>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        ))}
+    </main>
+
+    <Footer />
+</Layout>
