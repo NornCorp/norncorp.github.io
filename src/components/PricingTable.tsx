@@ -17,9 +17,9 @@ interface PricingTableProps {
 
 export default function PricingTable({ tiers }: PricingTableProps) {
   return (
-    <div className="py-24 sm:py-32">
+    <div className="pt-10 pb-24 sm:pb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
+        <div className={`isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 ${tiers.length <= 3 ? 'lg:max-w-4xl lg:grid-cols-3' : 'lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4'}`}>
           {tiers.map((tier) => (
             <div
               key={tier.name}
