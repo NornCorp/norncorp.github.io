@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.tsx';
+import Footer from '../../components/Footer.tsx';
+
+const resourceSections = [
+    {
+        badge: 'Documentation',
+        title: 'Technical documentation',
+        description: 'Comprehensive guides, API references, and tutorials to help you get the most out of NornCorp products.',
+        links: [
+            { label: 'Mimir Documentation', href: '/products/mimir', description: 'Secrets management setup guides, CLI reference, and best practices.' },
+            { label: 'Yggdrasil Documentation', href: '/products/yggdrasil', description: 'Access management policies, identity federation, and RBAC configuration.' },
+            { label: 'API Reference', href: '#', description: 'REST and gRPC API documentation for all NornCorp services.' },
+        ],
+    },
+    {
+        badge: 'Blog',
+        title: 'Insights and updates',
+        description: 'Stay up to date with the latest security trends, product updates, and engineering deep dives from the NornCorp team.',
+        links: [
+            { label: 'Read the blog', href: '/resources/blog', description: 'Articles on secrets management, zero trust, and infrastructure security.' },
+        ],
+    },
+    {
+        badge: 'Training',
+        title: 'Hands-on training',
+        description: 'Interactive labs and structured learning paths to build practical skills with NornCorp products.',
+        links: [
+            { label: 'NornCorp Academy on Instruqt', href: 'https://play.instruqt.com', description: 'Self-paced labs covering Mimir and Yggdrasil fundamentals through advanced topics.' },
+            { label: 'Certification Program', href: '#', description: 'Validate your expertise with NornCorp professional certifications.' },
+        ],
+    },
+    {
+        badge: 'Case Studies',
+        title: 'Customer stories',
+        description: 'Learn how enterprises use NornCorp to secure their infrastructure at scale.',
+        links: [
+            { label: 'Meridian Bank', href: '#', description: 'How Meridian Bank reduced secret sprawl by 94% and achieved compliance in 6 weeks with Mimir.' },
+            { label: 'Sentinel Insurance', href: '#', description: 'Sentinel Insurance cut access provisioning time from days to minutes using Yggdrasil.' },
+            { label: 'Atlas Manufacturing', href: '#', description: 'Atlas Manufacturing secured 12,000 IoT endpoints across 30 facilities with NornCorp.' },
+        ],
+    },
+];
+---
+
+<Layout title="Resources - NornCorp" description="Documentation, blog, training, and case studies for NornCorp security products.">
+    <Header client:load />
+
+    <main class="isolate">
+        <!-- Hero -->
+        <div class="bg-norn-dark py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl">
+                    <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Resources</h1>
+                    <p class="mt-4 text-lg text-gray-400">
+                        Everything you need to deploy, learn, and get the most from NornCorp — documentation, training labs, blog posts, and real-world case studies.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resource Sections -->
+        {resourceSections.map((section, i) => (
+            <div class={i % 2 === 0 ? 'bg-norn-darker' : 'bg-norn-dark'}>
+                <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+                    <div class="mx-auto max-w-2xl lg:max-w-none">
+                        <h2 class="text-base/7 font-semibold text-norn-green">{section.badge}</h2>
+                        <p class="mt-2 text-3xl font-semibold tracking-tight text-pretty text-white sm:text-4xl">
+                            {section.title}
+                        </p>
+                        <p class="mt-6 text-lg/8 text-gray-300">{section.description}</p>
+
+                        <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            {section.links.map((link) => (
+                                <a
+                                    href={link.href}
+                                    class="group relative rounded-2xl bg-norn-dark/50 p-8 ring-1 ring-white/10 transition hover:ring-norn-green/25"
+                                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                >
+                                    <h3 class="text-base/7 font-semibold text-white group-hover:text-norn-green">
+                                        {link.label}
+                                        {link.href.startsWith('http') && (
+                                            <span class="ml-1 text-gray-500" aria-hidden="true">&nearr;</span>
+                                        )}
+                                    </h3>
+                                    <p class="mt-2 text-sm/6 text-gray-400">{link.description}</p>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </main>
+
+    <Footer />
+</Layout>
