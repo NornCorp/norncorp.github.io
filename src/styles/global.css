@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+.prose pre.astro-code {
+    background-color: #06140f !important;
+}
+
 @theme {
     --color-norn-dark: #081C15;
     --color-norn-darker: #0D1F17;
