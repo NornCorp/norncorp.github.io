@@ -9,7 +9,6 @@ const navigation = {
   ],
   company: [
     { name: 'About', href: '/company/about' },
-    { name: 'Careers', href: '#' },
     { name: 'Contact', href: '/company/contact' },
   ],
   legal: [
