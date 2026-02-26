@@ -3,6 +3,40 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.tsx';
 import Footer from '../../components/Footer.tsx';
 import ProductHero from '../../components/ProductHero.tsx';
+import PricingTable from '../../components/PricingTable.tsx';
+
+const pricingTiers = [
+    {
+        name: 'Team',
+        price: '$15',
+        period: '/user/month',
+        description: 'For small teams that need secure remote access.',
+        features: ['5-50 users', 'SSH & RDP access', 'Basic session recording', 'Certificate-based auth', 'Community support'],
+        cta: 'Start free trial',
+        ctaLink: '/resources',
+        highlighted: false,
+    },
+    {
+        name: 'Business',
+        price: '$30',
+        period: '/user/month',
+        description: 'For organizations requiring advanced access controls and compliance.',
+        features: ['10-500 users', 'Kubernetes & database access', 'Just-in-time access', 'SSO integration', 'Priority support'],
+        cta: 'Start free trial',
+        ctaLink: '/resources',
+        highlighted: true,
+    },
+    {
+        name: 'Enterprise',
+        price: 'Custom',
+        period: '',
+        description: 'For large organizations with custom policies and approval workflows.',
+        features: ['Unlimited users', 'Approval workflows', 'Custom access policies', 'Dedicated support engineer', 'SLA & compliance packages'],
+        cta: 'Contact sales',
+        ctaLink: '/company/contact',
+        highlighted: false,
+    },
+];
 ---
 
 <Layout title="Yggdrasil - Identity-Aware Access Gateway | NornCorp" description="Zero-trust access control for modern infrastructure. Secure every connection with identity-aware policies.">
@@ -173,6 +207,18 @@ import ProductHero from '../../components/ProductHero.tsx';
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Pricing Section -->
+        <div class="bg-norn-dark">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl text-center">
+                    <h2 class="text-base/7 font-semibold text-norn-green">Pricing</h2>
+                    <p class="mt-2 text-3xl font-semibold tracking-tight text-pretty text-white sm:text-4xl">
+                        Choose the right plan for your team
+                    </p>
+                </div>
+            </div>
+            <PricingTable tiers={pricingTiers} />
         </div>
     </main>
 
